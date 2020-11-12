@@ -1,0 +1,217 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    <!-- Start Featured Slider -->
+    <section id="mu-featured-slider">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-featured-slide">
+
+                    <!-- Start Single slide -->
+                    <div class="mu-featured-slider-single">
+                        {% for active in carousel_active %}
+                            <img src="{{ active.image }}">
+                        {% endfor %}
+                    </div>
+                    <!-- End Single slide -->
+
+                    <!-- Start Single slide -->
+                    <div class="mu-featured-slider-single">
+                        {% for item in carousel_item %}
+                            <img src="{{ item.image }}">
+                        {% endfor %}
+                    </div>
+                    <!-- End Single slide -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Start Featured Slider -->
+
+    <!-- Start main content -->
+    <main role="main">
+
+        <!-- Start Counter -->
+        <section id="mu-counter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <!-- Start Service Content -->
+                            <div class="mu-service-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mu-portfolio-area">
+                                            <div class="mu-portfolio-header">
+                                                <h2 class="mu-heading-title">CATA<span>LOGO</span></h2>
+                                                <span class="mu-header-dot"></span>
+                                                <p>categorias y productos.</p>
+                                            </div>
+                                            <!-- Start Portfolio Filter -->
+                                            <div class="mu-portfolio-filter-area">
+                                                <ul class="mu-simplefilter">
+                                                    <li class="active" data-filter="all">TODOS</li>
+                                                    {% for category in category_all  %}
+                                                        <li data-filter="{{ category.id }}">{{ category.name }}</li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                            <!-- Start Portfolio Content -->
+                                            <div class="mu-portfolio-content">
+                                                <div class="filtr-container">
+
+                                                    {% for type in type_product %}
+                                                        <div class="col-xs-6 col-sm-4 col-md-4 filtr-item" data-category="{{ type.category.id }}">
+                                                            <a class="mu-imglink" href="#" title="Web Development">
+                                                                <img class="img-responsive" src="{{ type.image }}" alt="image">
+                                                                <div class="mu-filter-item-content">
+                                                                    <h4 class="mu-filter-item-title">{{ type.name }}</h4>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    {% endfor %}
+
+                                                </div>
+                                            </div>
+                                            <!-- End Portfolio Content -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Service Content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Counter -->
+
+        <!-- Start Team -->
+        <section id="mu-team">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mu-team-area">
+                            <div class="mu-team-header">
+                                <h2 class="mu-heading-title">NUESTRO <span>EQUIPO</span></h2>
+                                <span class="mu-header-dot"></span>
+                            </div>
+                            <!-- Start Team Content -->
+                            <div class="mu-team-content">
+                                <div class="row">
+                                    <!-- Start Featured Slider -->
+                                    <section id="mu-featured-slider">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="mu-featured-slide">
+                                                    <!-- Start Single slide -->
+                                                    <div class="mu-featured-slider-single">
+                                                        <!-- Service Single Content -->
+                                                        {% for team in personal %}
+                                                            <div class="col-sm-6 col-md-4">
+                                                                <div class="mu-team-content-single">
+                                                                    <div class="mu-team-profile">
+                                                                        <img src="{{ team.image }}" alt="team member">
+                                                                        <div class="mu-team-social-info">
+                                                                            <a href="#"><i class="icon-social-facebook"></i></a>
+                                                                            <a href="#"><i class="icon-social-twitter"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="mu-team-info">
+                                                                        <h4>{{ team.name_lastname }}</h4>
+                                                                        <span>{{ team.position }}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        {% endfor %}
+                                                        <!-- / Service Single Content -->
+                                                    </div>
+                                                    <!-- End Single slide -->
+
+                                                    <!-- Start Single slide -->
+                                                    <div class="mu-featured-slider-single">
+                                                        <!-- Service Single Content -->
+                                                        {% for team in personal_item %}
+                                                            <div class="col-sm-6 col-md-4">
+                                                                <div class="mu-team-content-single">
+                                                                    <div class="mu-team-profile">
+                                                                        <img src="{{ team.image }}" alt="team member">
+                                                                        <div class="mu-team-social-info">
+                                                                            <a href="#"><i class="icon-social-facebook"></i></a>
+                                                                            <a href="#"><i class="icon-social-twitter"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="mu-team-info">
+                                                                        <h4>{{ team.name_lastname }}</h4>
+                                                                        <span>{{ team.position }}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        {% endfor %}
+                                                        <!-- / Service Single Content -->
+                                                    </div>
+                                                    <!-- End Single slide -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- Start Featured Slider -->
+                                </div>
+                            </div>
+                            <!-- End Team Content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Team -->
+
+        <!-- Start Contact -->
+        <section id="mu-contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mu-contact-area">
+
+                            <div class="mu-contact-header">
+                                <h2 class="mu-heading-title"><span>CONTACTANOS</span></h2>
+                                <span class="mu-header-dot"></span>
+                            </div>
+
+                            <!-- Start Contact Content -->
+                            <div class="mu-contact-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mu-contact-right">
+                                            <h4>Weiss</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                            <address>
+                                                <p><i class="icon-location-pin"></i>Cl. 6 Nte. ## 17-71, Armenia, Quindío</p>
+                                                <p><i class="icon-envelope"></i>weiss.sport.18@gmail.com</p>
+                                                <p><i class="icon-phone"></i>+57 320 6530620</p>
+                                            </address>
+                                            <div class="mu-social-media">
+                                                <a href="https://www.facebook.com/weiss.sport"><i class="icon-social-facebook"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- End Contact Content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact -->
+
+        <!-- Start Google Map -->
+        <section id="mu-google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.2813227143292!2d-75.66677368569644!3d4.543302244268403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38f4ffaa2f635f%3A0xa21a2e6c79257d93!2sWEISS!5e0!3m2!1ses-419!2sco!4v1605212225296!5m2!1ses-419!2sco" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </section>
+        <!-- End Google Map -->
+    </main>
+    <!-- End main content -->
+{% endblock %}
